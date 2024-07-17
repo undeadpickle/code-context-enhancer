@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# Display warning message
+echo "⚠️  WARNING ⚠️"
+echo "This script will modify file structures and generate new files."
+echo "It may overwrite existing files in the destination directory."
+echo "Please ensure you have backed up your data before proceeding."
+echo ""
+read -p "Do you understand and wish to continue? (y/N): " confirm
+if [[ $confirm != [yY] ]]; then
+    echo "Operation cancelled."
+    exit 1
+fi
+echo ""
+
 # Function to prompt for input with a default value and validate
 prompt_and_validate() {
     local prompt="$1"
@@ -183,6 +196,15 @@ if [ "$PROCESS_TYPE" = "m" ]; then
     # Set destination file
     DEST_FILE="${DEST_DIR}/merged_scripts_${TIMESTAMP}.${OUTPUT_FILE_TYPE}"
 
+    # Check if destination file exists
+    if [ -f "$DEST_FILE" ]; then
+        read -p "File $DEST_FILE already exists. Overwrite? (y/N): " confirm
+        if [[ $confirm != [yY] ]]; then
+            echo "Operation cancelled."
+            exit 1
+        fi
+    fi
+
     # Create the destination file
     mkdir -p "$DEST_DIR"
     echo "" > "$DEST_FILE"
@@ -253,6 +275,15 @@ else
         # Create new filename
         new_filename=$(echo "$relative_path" | sed 's/\//_/g')
         dest_file="${DEST_DIR}/${new_filename}"
+
+        # Check if destination file exists
+        if [ -f "$dest_file" ]; then
+            read -p "File $dest_file already exists. Overwrite? (y/N): " confirm
+            if [[ $confirm != [yY] ]]; then
+                echo "Skipping $relative_path"
+                continue
+            fi
+        fi
 
         # Write script information to destination file
         {

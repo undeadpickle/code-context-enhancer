@@ -1,9 +1,12 @@
-  # Ignore any files that might contain API keys
-   *.env
+# Ignore any files that might contain API keys
+*.env
 
-   # Ignore system files
-   .DS_Store
-   Thumbs.db
+# Ignore system files
+.DS_Store
+Thumbs.db
 
-   # Ignore any log files
-   *.log
+# Ignore any log files
+*.log
+
+# Ignore the src directory
+/src
