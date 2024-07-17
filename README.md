@@ -97,7 +97,7 @@ Let's say you're a game developer working on a Roblox project, and you want to p
    Do you understand and wish to continue? (y/N): y
 
    Source folder [./src]: my_roblox_game/src
-   Destination folder [.]: enhanced_roblox_game
+   Destination folder [.]: my_roblox_game_codebase
    File types to process (comma-separated, or 'all' for all types) [all]: lua
    Process files ([M]erged/[I]ndividual) [M]: M
    Generate AI descriptions? ([Y]es/[N]o) [Y]: Y
@@ -116,11 +116,11 @@ Let's say you're a game developer working on a Roblox project, and you want to p
    Processed: Shared/Utilities.lua
 
    Merge complete. Total scripts merged: 5
-   Merged file: enhanced_roblox_game/merged_scripts_20240415_123456.lua
+   Merged file: my_roblox_game_codebase/merged_scripts_20240415_123456.lua
    ```
 
 4. Result:
-   You now have a single Lua file (`merged_scripts_20240415_123456.lua`) in the `enhanced_roblox_game` directory. This file contains all your Roblox scripts, along with their file paths and AI-generated descriptions.
+   You now have a single Lua file (`merged_scripts_20240415_123456.lua`) in the `my_roblox_game_codebase` directory. This file contains all your Roblox scripts, along with their file paths and AI-generated descriptions.
 
 5. Using the Result:
    - Upload the merged file to Claude.ai's project files feature
