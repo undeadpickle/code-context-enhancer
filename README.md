@@ -50,6 +50,7 @@ CodeContext Enhancer is a bash script designed to optimize project file structur
 6. AI Descriptions:
 
    - If enabled, the script will use the Anthropic API to generate brief descriptions for each file
+   - Model: claude-3-haiku-20240307
    - You'll need to input your Anthropic API key when prompted
 
 7. Output:
